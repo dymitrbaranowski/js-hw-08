@@ -7,13 +7,13 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import { galleryItems } from './gallery-items';
 // Change code below this line
 
-import { sum as fnSum, add } from './02-video';
-import * as data from './02-video';
-const sum = 10;
-// console.log(fnSum(4, 5));
-// console.log(sum);
-// console.log(add(2, 2));
-console.log(data.add);
+// import { sum as fnSum, add } from './02-video';
+// import * as data from './02-video';
+// const sum = 10;
+// // console.log(fnSum(4, 5));
+// // console.log(sum);
+// // console.log(add(2, 2));
+// console.log(data.add);
 
 console.log(galleryItems);
 
