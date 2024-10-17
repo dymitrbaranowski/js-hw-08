@@ -1,17 +1,17 @@
-function fn(arr, cash) {
-  const obj = {};
+import throttle from 'lodash.throttle';
+const form = document.querySelector('.feedback-form');
+const localStorageKey = 'feedback-form-state';
+// console.dir(form);
 
-  for (let i = 1; i <= cash; i += 1) {
-    obj[i] = 0;
-  }
-  arr.forEach(bayer => {
-    const values = Object.values(obj);
-    const minValue = Math.min(...values);
-    const currentCase = values.indexOf(minValue) + 1;
-    obj[currentCase] += bayer;
-  });
+const formData = {};
 
-  return obj;
+form.addEventListener('submit', throttle(onSubmit, 200));
+form.addEventListener('input', throttle(onInput, 200));
+
+function onInput(evt) {
+  formData[evt.target.name] = evt.target.value;
+  console.log(formData);
+  localStorage.setItem(localStorageKey, JSON.stringify(formData));
 }
 
-console.log(fn([12, 3, 5, 6, 2, 15, 7], 2));
+function onSubmit(evt) {}
